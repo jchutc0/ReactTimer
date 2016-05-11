@@ -15,7 +15,7 @@ module.exports = {
 		})
 	],
 	output: {
-		path: '/var/www/vhosts/ec2-52-201-173-181.compute-1.amazonaws.com/react/timer',
+		path: './public',
 		filename: './bundle.js'
 	},
 	resolve: {
