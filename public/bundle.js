@@ -25404,6 +25404,21 @@
 	      }
 	    }
 	  },
+	  // componentWillUpdate: function(nextProps, nextState) {
+	  //
+	  // },
+
+	  componentWillUnmount: function componentWillUnmount() {
+	    // console.log('Component did unmount');
+	    clearInterval(this.timer);
+	    this.timer = undefined;
+	  },
+	  // componentWillMount: function() {
+	  //   console.log('Component will mount');
+	  // },
+	  // componentDidMount: function() {
+	  //   console.log('Component did mount');
+	  // },
 	  startTimer: function startTimer() {
 	    var _this = this;
 
@@ -25412,6 +25427,9 @@
 	      _this.setState({
 	        count: newCount >= 0 ? newCount : 0
 	      });
+	      if (newCount === 0) {
+	        _this.setState({ countdownStatus: 'stopped' });
+	      }
 	    }, 1000);
 	  },
 	  handleSetCountdown: function handleSetCountdown(seconds) {
@@ -25560,6 +25578,9 @@
 	      _this.props.onStatusChange(newStatus);
 	    };
 	  },
+	  // componentWillReceiveProps: function(newProps) {
+	  //   console.log('Component will receive props', newProps.countdownStatus);
+	  // },
 	  render: function render() {
 	    var _this2 = this;
 
