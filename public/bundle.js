@@ -25359,7 +25359,7 @@
 	  getInitialState: function getInitialState() {
 	    return {
 	      count: 0,
-	      timerStatus: 'paused'
+	      timerStatus: 'stopped'
 	    };
 	  },
 
@@ -25370,10 +25370,7 @@
 	          this.startTimer();
 	          break;
 	        case 'stopped':
-	          this.setState({
-	            count: 0,
-	            timerStatus: 'paused'
-	          });
+	          this.setState({ count: 0 });
 	        case 'paused':
 	          clearInterval(this.timer);
 	          this.timer = undefined;
@@ -25518,7 +25515,7 @@
 	          { className: 'button secondary', onClick: _this2.onStatusChange('paused') },
 	          'Pause'
 	        );
-	      } else if (countdownStatus === 'paused') {
+	      } else {
 	        return React.createElement(
 	          'button',
 	          { className: 'button primary', onClick: _this2.onStatusChange('started') },
