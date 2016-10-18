@@ -6,6 +6,7 @@ var Controls = React.createClass({
     onStatusChange: React.PropTypes.func.isRequired
   },
   onStatusChange: function(newStatus) {
+    // console.log('got here');
     return () => {
       this.props.onStatusChange(newStatus);
     }
